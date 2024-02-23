@@ -1,0 +1,19 @@
+{% include 'partials/header' %}
+<!-- Include the header partial -->
+
+<main>
+  {{ content }}
+  <!-- Main content will be inserted here -->
+</main>
+
+{% include 'partials/footer' %}
+<!-- Include the footer partial -->
+
+<script>
+var TajerData = {{ data | json }};
+var baseAssetsUrl = "{{ baseAssetsUrl }}";
+</script>
+
+<!-- You can add any additional scripts or other elements here -->
+<script src="{{ baseAssetsUrl }}/scripts/index.js"></script>
+<script src="{{ THEME_BASE_URL }}/assets/index.js"></script>

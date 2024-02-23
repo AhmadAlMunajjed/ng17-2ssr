@@ -3,9 +3,11 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration, withHttpTransferCacheOptions } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withComponentInputBinding()), provideClientHydration(withHttpTransferCacheOptions({}))
+    provideRouter(routes, withComponentInputBinding()), provideClientHydration(withHttpTransferCacheOptions({})),
+    provideHttpClient(),
   ]
 };

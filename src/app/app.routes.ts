@@ -14,6 +14,12 @@ export const routes: Routes = [
         path: 'cart',
         loadComponent: () => import('./pages/cart.page/cart.page.component').then((m) => m.CartPageComponent),
     },
+    {
+        path: 'page/:slug',
+        loadComponent: () => import('./pages/custom.page/custom.page.component').then((m) => m.CustomPageComponent),
+    },
+
+
     // prefix routes
     {
         path: ':prefix',
@@ -28,6 +34,11 @@ export const routes: Routes = [
     {
         path: ':prefix/cart',
         loadComponent: () => import('./pages/cart.page/cart.page.component').then((m) => m.CartPageComponent),
+        canMatch: [prefixGuard]
+    },
+    {
+        path: ':prefix/page/:slug',
+        loadComponent: () => import('./pages/custom.page/custom.page.component').then((m) => m.CustomPageComponent),
         canMatch: [prefixGuard]
     },
     /**
