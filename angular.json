@@ -33,11 +33,13 @@
               "src/styles.scss"
             ],
             "scripts": [],
+            /* start ssr server configs */
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
               "entry": "server.ts"
             }
+            /* end ssr server configs */
           },
           "configurations": {
             "production": {
